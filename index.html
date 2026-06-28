@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Park Junyoung | Developer Portfolio</title>
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --bg: #ffffff;
+      --soft: #f9fafb;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.15;
+      margin: 0 0 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 32px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .button.primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 26px;
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 720px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      background: #fff;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: #374151;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+
+    .post-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .post {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .post:last-child {
+      border-bottom: none;
+    }
+
+    .post h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .post p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 36px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 72px 0 56px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">Park Junyoung</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">AI · Data · Backend Developer</div>
+        <h1>문제를 기록하고,<br />작게 구현하며 성장하는 개발자</h1>
+        <p>
+          데이터 드리븐에 기여합니다.
+          이 공간에는 학습 기록, 프로젝트 회고, 문제 해결 과정을 정리합니다.
+        </p>
+
+        <div class="button-row">
+          <a class="button primary" href="#projects">프로젝트 보기</a>
+          <a class="button" href="https://github.com/parkjunyoungdev" target="_blank">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p class="section-desc">
+          광고전공 이후 데이터와 AI 활용 환경에 관심을 가지며 개발을 학습해왔습니다.
+          Python, Linux, Docker, 데이터베이스, 데이터 파이프라인, LLM 기반 서비스 구현을 중심으로
+          실무형 역량을 쌓고 있습니다.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>관심 분야</h3>
+            <p>AI 학습데이터, 데이터 품질, LLM/RAG, 백엔드 개발</p>
+          </div>
+          <div class="card">
+            <h3>기술 스택</h3>
+            <p>Python, JavaScript, Linux, Docker, PostgreSQL, Elasticsearch</p>
+          </div>
+          <div class="card">
+            <h3>학습 방향</h3>
+            <p>작은 서비스를 직접 만들고 운영하며 문제 해결 과정을 기록합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-desc">
+          프로젝트 코드는 현재 정리 중입니다. 우선 진행했던 주제와 기술적 관심사를 중심으로 정리합니다.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>News Data Pipeline</h3>
+            <p>
+              뉴스 데이터를 수집하고 Kafka, Prefect, Elasticsearch를 활용해
+              데이터 흐름을 구성하는 실습 프로젝트입니다.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Kafka</span>
+              <span class="tag">Prefect</span>
+              <span class="tag">Elasticsearch</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>LLM/RAG Practice</h3>
+            <p>
+              문서 파싱, 청크 분할, 검색 품질, LLM 응답 검증 과정을 실험하고 기록하는 프로젝트입니다.
+            </p>
+            <div class="tag-list">
+              <span class="tag">LLM</span>
+              <span class="tag">RAG</span>
+              <span class="tag">Vector DB</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>No-code LLM Platform</h3>
+            <p>
+              노드 기반 UI로 Prompt, AI, DB, Document 흐름을 연결하는 웹 플랫폼 실습 프로젝트입니다.
+            </p>
+            <div class="tag-list">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">ReactFlow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <h2>Blog</h2>
+        <p class="section-desc">
+          단순 공부 기록보다, 막혔던 문제와 해결 과정을 중심으로 작성할 예정입니다.
+        </p>
+
+        <div class="post-list">
+          <article class="post">
+            <h3>GitHub Pages로 개발자 블로그를 시작하며</h3>
+            <p>포트폴리오와 학습 기록을 한 곳에 정리하기 위해 블로그를 시작했습니다.</p>
+          </article>
+
+          <article class="post">
+            <h3>데이터 파이프라인 프로젝트 정리 예정</h3>
+            <p>Kafka, Prefect, Elasticsearch를 활용한 실습 내용을 정리할 예정입니다.</p>
+          </article>
+
+          <article class="post">
+            <h3>정보처리산업기사 실기 코드 문제 풀이 기록</h3>
+            <p>Java, C, Python 코드 문제를 초보자 관점에서 해석하며 기록할 예정입니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-desc">
+          GitHub와 블로그를 통해 학습 과정과 프로젝트를 지속적으로 정리하고 있습니다.
+        </p>
+
+        <div class="card">
+          <h3>GitHub</h3>
+          <p>
+            <a href="https://github.com/parkjunyoungdev" target="_blank">
+              github.com/parkjunyoungdev
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Park Junyoung. Built with GitHub Pages.
+    </div>
+  </footer>
+</body>
+</html>
